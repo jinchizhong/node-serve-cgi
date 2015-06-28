@@ -18,9 +18,10 @@ describe('cgi', function() {
       assert.equal(data, 'test\n');
       err_cover = true;
     }});
-    cgi.run([__dirname + '/scripts/error.sh'], __dirname, {}, function(code, stdout) {
+    cgi.run([__dirname + '/scripts/error.sh'], __dirname, {}, function(code, stdout, stderr) {
       assert.equal(code, 1);
       assert.equal(stdout, '');
+      assert.equal(stderr, 'test\n');
       assert(err_cover);
       done();
     });

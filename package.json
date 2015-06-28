@@ -1,6 +1,6 @@
 {
   "name": "serve-cgi",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -11,5 +11,9 @@
   "dependencies": {
     "async": "^1.2.1",
     "extend": "^2.0.1"
+  },
+  "devDependencies": {
+    "express": "^4.13.0",
+    "supertest": "^1.0.1"
   }
 }
