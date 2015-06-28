@@ -30,7 +30,8 @@ Usage
 Options
 -------
 
-root: (default: process.cwd) The root of cgi dir. . Notice: express will transfor url automaticly, for example:
+`root`: (default: `process.env.DOCUMENT_ROOT || process.cwd`) The root of cgi dir.
+Notice: express will transfor url automaticly, for example:
 
     app.use('/cgi-bin', cgi)
     // 127.0.0.1/cgi-bin/hello.sh  =>  #{root}/hello.sh
@@ -38,15 +39,15 @@ root: (default: process.cwd) The root of cgi dir. . Notice: express will transfo
     app.use(cgi)
     // 127.0.0.1/cgi-bin/hello.sh  =>  #{root}/cgi-bin/hello.sh
 
-indexes: (default: empty) An array of index filenames, when a directory is matched serve-cgi will try them in order. 
+`indexes`: (default: empty) An array of index filenames, when a directory is matched serve-cgi will try them in order. 
 If none of index exists, serve-cgi will do nothing(jump to next middleware, if no middleware deal it, then 404)
 
-roles: As you see in `Usage`
+`roles`: As you see in `Usage`
 
-redirect\_dir: (default true) If this is `true`, when you access 127.0.0.1/cgi/dir, you will jump to 127.0.0.1/cgi/dir/.
+`redirect_dir`: (default `true`) If this is `true`, when you access 127.0.0.1/cgi/dir, you will jump to 127.0.0.1/cgi/dir/.
 This will be help in most case.
 
-decorator: (default: do nothing) After cgi is invoked, you can decorate the result of cgi. 
+`decorator`: (default: do nothing) After cgi is invoked, you can decorate the result of cgi. 
 For example, use layout decared in node.
 
     // default implement
@@ -58,5 +59,5 @@ For example, use layout decared in node.
       done(headers, body);
     };
 
-logger: (default: console.log) Where to output logs about serve-cgi.
-stderr: (default: console.log) Where to output stderr of cgi.
+`logger`: (default: console.log) Where to output logs about serve-cgi.
+`stderr`: (default: console.log) Where to output stderr of cgi.
