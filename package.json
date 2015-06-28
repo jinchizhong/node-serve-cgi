@@ -9,6 +9,7 @@
   "author": "",
   "license": "BSD",
   "dependencies": {
+    "async": "^1.2.1",
     "extend": "^2.0.1"
   }
 }

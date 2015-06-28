@@ -20,7 +20,7 @@ var req1 = {
 describe('req2env', function () {
   it('req1', function () {
     var cgi = require('../lib/index')({});
-    var env = cgi.req2env(req1, 'cgi/export.sh', __dirname);
+    var env = cgi.req2env(req1, '/cgi/export.sh', __dirname);
     
     assert.equal(env.GATEWAY_INTERFACE, 'CGI/1.1');
     assert.equal(env.SERVER_PROTOCOL, 'HTTP/1.1');
