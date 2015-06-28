@@ -1,5 +1,4 @@
-node-serve-cgi
-==============
+#node-serve-cgi
 
 Serve cgi by express or node
 
