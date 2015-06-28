@@ -6,7 +6,7 @@ var cgi = require('../lib/index')({
     '.sh': '/bin/sh',
     '.js': '/usr/bin/node'
   },
-  index: ['index.sh']
+  indexes: ['index.sh']
 });
 
 describe('match', function (){

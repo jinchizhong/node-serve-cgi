@@ -3,7 +3,10 @@ var express = require('express');
 
 var app = express();
 app.use('/cgi', require('../lib/index')({
-  root: __dirname
+  root: __dirname + '/cgi',
+  roles: {
+    '.sh': '/bin/sh'
+  }
 }));
 
 describe('express', function() {
