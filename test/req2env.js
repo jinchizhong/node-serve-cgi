@@ -3,6 +3,7 @@ var assert = require('assert');
 var req1 = {
   method: 'GET',
   url: '/aaa/bbb?q=hello',
+  originalUrl: '/aaa/bbb?q=hello',
   httpVersion: '1.1',
   connection: {
     remoteAddress: '127.0.0.1',
