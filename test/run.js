@@ -6,7 +6,7 @@ describe('cgi', function() {
 
     cgi.run([__dirname + '/scripts/export.sh'], __dirname, {}, function(code, stdout) {
       assert.equal(code, 0);
-      assert.equal(stdout, 'export PWD=\'/home/jcz/src/serve-cgi/test\'\n');
+      assert.equal(stdout, 'export PWD=\'' + __dirname + '\'\n');
       done();
     });
   });
@@ -23,6 +23,14 @@ describe('cgi', function() {
       assert.equal(stdout, '');
       assert.equal(stderr, 'test\n');
       assert(err_cover);
+      done();
+    });
+  });
+
+  it('do not wait fork', function(done) {
+    var cgi = require('../lib/index')({});
+    cgi.run([__dirname + '/scripts/fork.sh'], __dirname, {}, function(code, stdout) {
+      assert.equal(stdout, 'hello\n');
       done();
     });
   });

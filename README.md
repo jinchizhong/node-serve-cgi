@@ -60,4 +60,4 @@ For example, use layout decared in node.
     };
 
 `logger`: (default: console.log) Where to output logs about serve-cgi.
-`stderr`: (default: console.log) Where to output stderr of cgi.
+`stderr`: (default: process.stdout.write) Where to output stderr of cgi.
