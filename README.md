@@ -39,6 +39,8 @@ Notice: express will transfor url automaticly, for example:
     app.use(cgi)
     // 127.0.0.1/cgi-bin/hello.sh  =>  #{root}/cgi-bin/hello.sh
 
+`cwd`: (default: same as `root`) The work directory of cgi processt.
+
 `indexes`: (default: empty) An array of index filenames, when a directory is matched serve-cgi will try them in order. 
 If none of index exists, serve-cgi will do nothing(jump to next middleware, if no middleware deal it, then 404)
 
