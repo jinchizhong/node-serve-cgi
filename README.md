@@ -59,5 +59,7 @@ For example, use layout decared in node.
       done(headers, body);
     };
 
+`env`: (default: {}) Set custom env into cgi, envs here has high priority. for example you can cover DOCUMENT\_ROOT here.
+
 `logger`: (default: console.log) Where to output logs about serve-cgi.
 `stderr`: (default: process.stdout.write) Where to output stderr of cgi.
