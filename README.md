@@ -30,14 +30,20 @@ Usage
 Options
 -------
 
-`root`: (default: `process.env.DOCUMENT_ROOT || process.cwd`) The root of cgi dir.
-Notice: express will transfor url automaticly, for example:
+`mount`: (default: see [Express app.use](http://expressjs.com/api.html#app.use)).
+See `root`.
 
-    app.use('/cgi-bin', cgi)
-    // 127.0.0.1/cgi-bin/hello.sh  =>  #{root}/hello.sh
+`root`: (default: `process.env.DOCUMENT_ROOT || process.cwd`) The root of cgi dir.
+Work with `mount`, for example:
+
+    app.use('/cgi-bin', cgi({}))
+    // http://127.0.0.1/cgi-bin/hello.sh  =>  #{root}/hello.sh   mount = /cgi-bin
+
+    app.use('/cgi-bin', cgi({mount: '/'}))
+    // http://127.0.0.1/cgi-bin/hello.sh  =>  #{root}/cgi-bin/hello.sh   mount = /
 
     app.use(cgi)
-    // 127.0.0.1/cgi-bin/hello.sh  =>  #{root}/cgi-bin/hello.sh
+    // http://127.0.0.1/cgi-bin/hello.sh  =>  #{root}/cgi-bin/hello.sh   mount = /
 
 `cwd`: (default: same as `root`) The work directory of cgi processt.
 
