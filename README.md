@@ -71,3 +71,16 @@ For example, use layout decared in node.
 
 `logger`: (default: console.log) Where to output logs about serve-cgi.
 `stderr`: (default: process.stdout.write) Where to output stderr of cgi.
+
+POST requests
+-------------
+
+For some reasons, node-serve-cgi cannot get raw body from express 4 directly.
+So node-serve-cgi cannot deal POST requests directly.
+We need an extra middleware to get rawBody.
+
+See https://github.com/jinchizhong/express-grab-body
+
+Of course, you can set `req.rawBody` by other ways.
+
+See `demo/app.js`...

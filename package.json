@@ -1,6 +1,6 @@
 {
   "name": "serve-cgi",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -14,6 +14,7 @@
   },
   "devDependencies": {
     "express": "^4.13.0",
+    "express-grab-body": "^0.1.0",
     "supertest": "^1.0.1"
   }
 }
